@@ -16,8 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <xml.file>${env.xmlFileName}</xml.file>
-    <testType>${env.testType}</testType>
+    <xml.file>${xmlFileName}</xml.file>
   </properties>
 
   <dependencies>
@@ -72,12 +71,11 @@
         	<groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
-		<configuration>
-			<systemPropertyVariables>
-				<propertyName>${testType}}</propertyName>
-			</systemPropertyVariables>
-			<suiteXmlFile>src/test/${xml.file}</suiteXmlFile>
-		</configuration>
+			<configuration>
+				<suiteXmlFiles>
+					<suiteXmlFile>src/main/resource/${xml.file}</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
