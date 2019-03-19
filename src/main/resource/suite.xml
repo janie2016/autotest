@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="test">
+	<test name="suiteClass2"> 
+		<classes >
+			<class name="com.testng.suite.SuiteConfig"/>
+			<class name="com.testng.suite.SuiteClass2"/>
+		</classes>
+	</test>
+	
+	<test  name="suiteClass1">
+		<classes>
+			<class name="com.testng.suite.SuiteConfig"/>
+			<class name="com.testng.suite.SuiteClass1"/>
+		</classes>
+	</test>
+	
+	<listeners>
+		<listener class-name="com.testng.common.ExtentTestNGIReporterListener"></listener>
+	</listeners>
+</suite>
